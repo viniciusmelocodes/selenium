@@ -8,8 +8,8 @@ async function apontamentoHoras() {
 
         await driver.get("https://rosie.artit.com.br/auth/login");
 
-        await driver.findElement(By.name("username")).sendKeys("vinicius.simplicio");
-        await driver.findElement(By.name("password")).sendKeys("75998741Vl@", Key.RETURN);
+        await driver.findElement(By.name("username")).sendKeys("seu usuário");
+        await driver.findElement(By.name("password")).sendKeys("sua senha", Key.RETURN);
 
         await driver.findElement(By.id("tab_panel_apontamento")).click();
 
