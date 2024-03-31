@@ -3,6 +3,7 @@ const { By, Key, Select, Builder } = require("selenium-webdriver");
 async function apontamentoHoras() {
     let dateToday = new Date();
 
+    // Somente pode executar de segunda a sexta
     if (dateToday.getDay() > 0 && dateToday.getDay() < 6) {
         let driver = await new Builder().forBrowser("chrome").build();
 
