@@ -4,7 +4,7 @@ async function apontamentoHoras() {
     let dateToday = new Date();
 
     // Somente pode executar de segunda a sexta
-    if (dateToday.getDay() > -1 && dateToday.getDay() < 6) {
+    if (dateToday.getDay() > 0 && dateToday.getDay() < 6) {
         let driver = await new Builder().forBrowser("chrome").build();
 
         await driver.get("https://rosie.artit.com.br/auth/login");
