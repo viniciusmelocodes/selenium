@@ -1,22 +1,23 @@
-const { By, Key, Select, Builder } = require("selenium-webdriver");
+const { By, Key, Select, Builder, locateWith } = require("selenium-webdriver");
 
 async function apontamentoHoras() {
     let dateToday = new Date();
 
     // Somente pode executar de segunda a sexta
-    if (dateToday.getDay() > 0 && dateToday.getDay() < 6) {
+    if (dateToday.getDay() > -1 && dateToday.getDay() < 6) {
         let driver = await new Builder().forBrowser("chrome").build();
 
         await driver.get("https://rosie.artit.com.br/auth/login");
 
-        await driver.findElement(By.name("username")).sendKeys("seu usuário");
+        await driver.findElement(By.name("username")).sendKeys("seu usuario");
         await driver.findElement(By.name("password")).sendKeys("sua senha", Key.RETURN);
 
         await driver.findElement(By.id("tab_panel_apontamento")).click();
 
         // Apontamento de 09:00 às 12:00
         setTimeout(() => {
-            driver.findElement(By.className("btn-novo-apontamento")).click();
+            let elFcToday = driver.findElement(By.css("td.fc-today"));
+            elFcToday.findElement(By.className('btn-novo-apontamento')).click();
 
             setTimeout(() => {
                 let selectElement = driver.findElement(By.id('cboCliente'));
@@ -61,7 +62,8 @@ async function apontamentoHoras() {
 
         // Apontamento de 13:00 às 18:00
         setTimeout(() => {
-            driver.findElement(By.className("btn-novo-apontamento")).click();
+            let elFcToday = driver.findElement(By.css("td.fc-today"));
+            elFcToday.findElement(By.className('btn-novo-apontamento')).click();
 
             setTimeout(() => {
                 let selectElement = driver.findElement(By.id('cboCliente'));
