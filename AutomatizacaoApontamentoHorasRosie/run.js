@@ -1,4 +1,4 @@
-const { By, Key, Select, Builder, locateWith } = require("selenium-webdriver");
+const { By, Key, Select, Builder } = require("selenium-webdriver");
 
 async function apontamentoHoras() {
     let dateToday = new Date();
