@@ -1,0 +1,1 @@
+0 11 * * * export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run.sh
