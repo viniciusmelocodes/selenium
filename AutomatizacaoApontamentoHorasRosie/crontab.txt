@@ -1,1 +1,5 @@
-0 11 * * * export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run.sh
+0 11 * * 1 export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run-segunda.sh
+0 11 * * 2 export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run-terca.sh
+0 11 * * 3 export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run-quarta.sh
+0 11 * * 4 export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run-quinta.sh
+0 11 * * 5 export DISPLAY=:0; ~/dev/crontab/selenium/AutomatizacaoApontamentoHorasRosie/run-sexta.sh
